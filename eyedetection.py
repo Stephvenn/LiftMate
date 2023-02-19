@@ -25,6 +25,3 @@ while not awake:
 
 video.release()
 cv2.destroyAllWindows()
-
-
-
