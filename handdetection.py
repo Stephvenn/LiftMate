@@ -10,6 +10,12 @@ temptop = 0
 tempright = 0
 tempinit = False
 
+global indexX, indexY, thumbX, thumbY
+indexX = 0
+indexY = 0
+thumbX = 0
+thumbY = 0
+
 #def detectMovement(top, right):
 #    if (top < temptop - 30 or top > temptop + 30 or right < tempright - 30 or right > tempright + 30):
 #        print("Face detected!")
@@ -35,19 +41,29 @@ while True:
             for id, lm in enumerate(handLms.landmark):
                 h, w, c = frame.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
-                if id == 20 :
+                if id == 4 :
                     cv2.circle(frame, (cx, cy), 25, (255, 0, 255), cv2.FILLED)
-                    if (tempinit is False):
-                        temptop = cy
-                        tempright = cx
-                        tempinit = True
-                    elif(tempinit is True and (cy < temptop - 100 or cy > temptop + 100 or cx < tempright - 100 or cx > tempright + 100)):
-                        print("Movement detected")
+                    thumbX = cx
+                    thumbY = cy
+                    tempinit = True
+                    #if (tempinit is False):
+                    #    temptop = cy
+                    #    tempright = cx
+                    #    tempinit = True
+                    #elif(tempinit is True and (cy < temptop - 100 or cy > temptop + 100 or cx < tempright - 100 or cx > tempright + 100)):
+                    #    print("Movement detected")
 
-                        temptop = cy
-                        tempright = cx
+                        # temptop = cy
+                        # tempright = cx
+                if id == 8:
+                    cv2.circle(frame, (cx, cy), 25, (255, 0, 255), cv2.FILLED)
+                    indexX = cx
+                    indexY = cy
+                mpDraw.draw_landmarks(frame, handLms, mpHands.HAND_CONNECTIONS)
+                
+    if (thumbX > indexX - 50 and thumbX < indexX + 50 and thumbY > indexY - 50 and thumbY < indexY + 50 and tempinit is True):
+        print("test")
 
-            mpDraw.draw_landmarks(frame, handLms, mpHands.HAND_CONNECTIONS)
 
 
     cv2.imshow("Video", frame)
