@@ -1,3 +1,0 @@
-import requests
-
-response = requests.get("https://api.elevenlabs.io/v1/text-to-speech/")

@@ -62,7 +62,7 @@ while True:
                 mpDraw.draw_landmarks(frame, handLms, mpHands.HAND_CONNECTIONS)
                 
     if (thumbX > indexX - 50 and thumbX < indexX + 50 and thumbY > indexY - 50 and thumbY < indexY + 50 and tempinit is True):
-        print("test")
+        print("Ok")
 
 
 
