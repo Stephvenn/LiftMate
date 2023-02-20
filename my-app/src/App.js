@@ -1,10 +1,23 @@
+import React from 'react';
 import './App.css';
+import Navbar from './components/NavBar';
+import {
+  BrowserRouter as Router, 
+  Routes, 
+  Route, 
+  Link
+} from 'react-router-dom';
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <h1> Hello</h1>
-    </div>
+    <>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' exact/>
+      </Routes>
+    </Router>
+    </>
   );
 }
 

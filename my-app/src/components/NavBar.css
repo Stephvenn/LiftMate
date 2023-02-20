@@ -1,0 +1,45 @@
+body {
+    background : #A0C5E8
+  }
+  
+nav {
+
+    height: 7rem;
+    left: 50px;
+    right: 10px;
+    display: flex;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 50;
+    z-index: 100;
+    border-radius: 40px;
+    justify-content: space-between;
+    gap: 5rem;
+  }
+  
+  .navbar-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-right: 1%;
+    list-style-type: none;
+  }
+  
+  .title-one {
+    font-family: Helvetica, Arial, Sans-Serif;
+    color: #ffffff;
+    font-size: 60px;
+    text-decoration: none;
+    text-decoration-thickness: 3px;
+  }
+
+  .title-two {
+    font-family: Helvetica, Arial, Sans-Serif;
+    color: #000000;
+    font-size: 60px;
+    text-decoration: none;
+  }
+  
